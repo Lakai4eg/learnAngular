@@ -1,0 +1,26 @@
+.navigation{
+  background-color: #e3f2fd
+}
+
+.navbar{
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0 20px;
+}
+
+.nav-item{
+  transition: all 0.4s ease-in-out;
+  height: 100%;
+}
+
+.nav-item:hover{
+  background-color: #487dfc;
+}
+
+.section{
+  margin-top: 10px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.5s ease-in-out;
+}

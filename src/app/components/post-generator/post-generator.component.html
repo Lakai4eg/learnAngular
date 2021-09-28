@@ -1,0 +1,21 @@
+<div class="input_container">
+  <div class="input">
+    <p>Post title</p>
+    <input [(ngModel)]="addedPost.title" type="text">
+  </div>
+  <div class="input">
+    <p>Post text</p>
+    <input [(ngModel)]="addedPost.text" type="text">
+  </div>
+  <div class="input">
+    <p>Date</p>
+    <input
+      (ngModelChange)="pickDate($event)"
+      [ngModel]="addedPost.date | date:'yyyy-MM-dd'"
+      type="date">
+  </div>
+</div>
+<button
+  class="btn btn-primary"
+  (click)="addPost($event)"
+>Add post</button>

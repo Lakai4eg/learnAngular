@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="left_side">
+    <b>{{postItem.title}}</b>
+    <p>{{postItem.text}}</p>
+    <p>{{postItem.date | date:'dd MMMM YYYY' : '5': 'ru'}}</p>
+    <ng-content></ng-content>
+  </div>
+  <div class="right_side">
+    <button
+      class="btn btn-danger"
+      (click)="onRemovePost()"
+    >Удалить</button>
+  </div>
+</div>
+

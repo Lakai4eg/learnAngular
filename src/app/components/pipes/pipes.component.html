@@ -1,0 +1,17 @@
+<p><b>Lorem ipsum dolor sit amet' | slice: 1: -10 </b>{{'Lorem ipsum dolor sit amet' | slice: 1: -10}}</p>
+<p><b>22.422323 | number:'3.3':'ru' </b>{{22.422323 | number:'3.3':'ru'}}</p>
+<p><b>322 | currency:'RUB':'symbol':'':'ru' </b>{{322 | currency:'RUB':'symbol':'':'ru'}}</p>
+<b>| json</b>
+<pre>{{
+  {
+    a: 1,
+    b: 2,
+    c:{
+      d: 3,
+      e: 4
+    }
+  } | json
+  }}
+  </pre>
+<p><b>10 | multBy:3 </b> {{10 | multBy:3}}</p>
+<p><b>date$ | async | date:'HH:mm:ss' </b>{{date$ | async | date:'HH:mm:ss'}}</p>

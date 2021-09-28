@@ -1,0 +1,34 @@
+<section class="post">
+  <app-post-generator
+    (postAdd)="addPost($event)"
+  ></app-post-generator>
+</section>
+<section class="post">
+  <h3>Фильтр постов</h3>
+  <input [(ngModel)]="search" type="text" placeholder="Введите фильтр">
+</section>
+<section>
+  <div class="post" *ngFor="let post of allPosts | postFilter:search">
+    <app-post
+      [postItem]="post"
+      (onPostRemove)="removePost($event)"
+    >
+      <div class="wrapper" #postType>
+        <div appFontSize="20" *ngIf="post.text.length > 10; else small">
+          Пост длинный
+        </div>
+        <ng-template #small>
+          <div appFontSize="10">Пост короткий</div>
+        </ng-template>
+      </div>
+    </app-post>
+  </div>
+</section>
+
+<section class="post">
+  <button class="btn btn-dark" (click)="showed = !showed">Show</button>
+  <span *appStructured="showed" class="wrapper">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, reprehenderit?
+  </span>
+</section>
+
