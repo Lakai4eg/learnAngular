@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>Internal component</h3>
+  <div class="container">
+    <h3>{{'counter service' | titlecase}}</h3>
+    <p>{{this.counterService.getValue()}}</p>
+    <button (click)="this.counterService.inc()" class="btn btn-primary">+</button>
+    <button (click)="this.counterService.dec()" class="btn btn-primary m-2">-</button>
+  </div>
+  <div class="container">
+    <h3>Local Counter Service</h3>
+    <p>{{this.localCounterService.getValue()}}</p>
+    <button (click)="this.localCounterService.inc()" class="btn btn-primary">+</button>
+    <button (click)="this.localCounterService.dec()" class="btn btn-primary m-2">-</button>
+  </div>
+</div>
+
+
+
