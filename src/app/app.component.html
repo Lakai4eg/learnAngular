@@ -1,17 +1,26 @@
 <div class="container">
   <nav class="navigation">
     <ul class="navbar">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Post controller</a>
+      <li class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+      >
+        <a class="nav-link" aria-current="page" routerLink="/">Post controller</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pipes">Pipes</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/pipes">Pipes</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/services">Services</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/services">Services</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/forms">Forms</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/forms">Forms</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/server">HTTP</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/routing/1">Routing</a>
       </li>
     </ul>
   </nav>

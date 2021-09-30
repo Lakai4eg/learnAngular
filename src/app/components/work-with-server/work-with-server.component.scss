@@ -1,0 +1,33 @@
+.section{
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 10px;
+}
+.todoContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.todoItem{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #e3e3e3 1px solid;
+  padding-bottom: 5px;
+}
+.todoItem:last-child{
+  border: unset;
+  padding-bottom: 0;
+}
+.finished{
+  text-decoration: line-through;
+}
+.right{
+  display: flex;
+  gap: 0 10px;
+}

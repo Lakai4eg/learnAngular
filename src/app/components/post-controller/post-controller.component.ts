@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Post} from "../../post";
+import {Post} from "../../interfaces/post";
 import {UUID} from "angular2-uuid";
 
 @Component({

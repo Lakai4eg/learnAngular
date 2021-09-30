@@ -1,5 +1,5 @@
 import {Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
-import {Post} from "../../post";
+import {Post} from "../../interfaces/post";
 import '@angular/common/locales/global/ru';
 
 @Component({

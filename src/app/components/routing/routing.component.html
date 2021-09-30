@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <h2>Routing</h2>
+  <div class="section flex-row">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="navigate('pipes')"
+    >To Pipes</button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="navigate('services')"
+    >To Services</button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="navigate('pipes')"
+    >To Pipes</button>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div *ngIf="!wrongId">{{todo.id}} {{todo.title}}</div>
+      <div>
+      <div>Введите номер загружаемого поста:</div>
+      <div class="warn" *ngIf="wrongId">Задайте id в диапазоне от 1 до 200</div>
+      <input
+        min="1"
+        max="200"
+        type="number"
+        [(ngModel)]="todo.id"
+        (ngModelChange)="getTodoById(todo.id)"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+

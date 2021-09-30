@@ -4,13 +4,18 @@ import {PostControllerComponent} from "./components/post-controller/post-control
 import {PipesComponent} from "./components/pipes/pipes.component";
 import {ServicesComponent} from "./components/services/services.component";
 import {FormsComponent} from "./components/forms/forms.component";
+import {WorkWithServerComponent} from "./components/work-with-server/work-with-server.component";
+import {RoutingComponent} from "./components/routing/routing.component";
 
 const routes: Routes =[
   { path: '', component: PostControllerComponent},
   { path: 'pipes', component: PipesComponent},
   { path: 'services', component: ServicesComponent},
   { path: 'forms', component: FormsComponent},
-  { path: '*', component: PostControllerComponent},
+  { path: 'server', component: WorkWithServerComponent},
+  { path: 'routing/:id', component: RoutingComponent},
+  { path: 'routing', redirectTo: 'routing/1'},
+  { path: '**', component: PostControllerComponent},
 ];
 
 @NgModule({

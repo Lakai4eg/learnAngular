@@ -15,6 +15,10 @@ import { PostFilterPipe } from './pipes/post-filter.pipe';
 import { ServicesComponent } from './components/services/services.component';
 import { InternalComponent } from './components/services/internal/internal.component';
 import { FormsComponent } from './components/forms/forms.component';
+import { WorkWithServerComponent } from './components/work-with-server/work-with-server.component';
+import {HttpClientModule} from "@angular/common/http";
+import { LoaderComponent } from './components/loader/loader.component';
+import { RoutingComponent } from './components/routing/routing.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +33,17 @@ import { FormsComponent } from './components/forms/forms.component';
     PostFilterPipe,
     ServicesComponent,
     InternalComponent,
-    FormsComponent
+    FormsComponent,
+    WorkWithServerComponent,
+    LoaderComponent,
+    RoutingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

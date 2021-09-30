@@ -19,7 +19,7 @@ export class FormsComponent {
 
   constructor() {
     this.form = new FormGroup({
-      email: new FormControl('',[Validators.email, Validators.required, MyValidators.restrictedEmail], ),
+      email: new FormControl('',[Validators.email, Validators.required, MyValidators.restrictedEmail], [MyValidators.emailExist] ),
       password: new FormControl('', [Validators.minLength(8), Validators.required]),
       address: new FormGroup({
         country: new FormControl('ru', [Validators.required]),
