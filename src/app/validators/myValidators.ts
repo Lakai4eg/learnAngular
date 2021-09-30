@@ -1,4 +1,4 @@
-import {FormControl, ValidationErrors} from "@angular/forms";
+import {AbstractControl, FormControl} from "@angular/forms";
 import {Observable} from "rxjs";
 
 export class MyValidators {
@@ -10,7 +10,7 @@ export class MyValidators {
     return null
   }
 
-  static emailExist(control: FormControl): Promise<{[key: string] : boolean} | null> | Observable<{[key: string] : boolean} | null>{
+  static emailExist(control: AbstractControl): Promise<{[key: string] : boolean} | null> | Observable<{[key: string] : boolean} | null>{
       return new Promise(resolve => {
         setTimeout(() => {
           if (control.value === 'e@e.ru'){

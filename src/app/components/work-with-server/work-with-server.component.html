@@ -1,0 +1,51 @@
+
+<div class="wrapper">
+  <h2>Work with Server</h2>
+  <section class="section">
+    <input type="text" [(ngModel)]="currentTodoTitle">
+    <button (click)="addTodo()" class="btn btn-dark">Добавить</button>
+    <button (click)="getTodos()"
+            [disabled]="loading"
+            class="btn btn-dark"
+    >Загрузить еще</button>
+    <button
+      (click)="sendToExpress({id: 1, age: 10, name:'vasya'})"
+      class="btn btn-dark"
+    >
+      To Express
+    </button>
+    <div *ngIf="express.loaded">
+      <app-loader *ngIf="express.loading"></app-loader>
+      <div *ngIf="express.respStatus === 'ok' && !express.loading">{{express.response | json}}</div>
+      <div *ngIf="express.errorText && !express.loading">{{express.errorText}}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div *ngIf="!loading; else load" class="todoContainer">
+      <div *ngFor="let todo of allTodos" class="todoItem">
+        <div
+          class="left"
+          [class.finished]="todo.completed"
+        >
+          {{todo.id}}
+          {{todo.title | titlecase}}
+        </div>
+        <div class="right">
+          <button
+            class="btn btn-danger"
+            (click)="removeTodo(todo.id)"
+          >Del</button>
+          <button
+            class="btn btn-dark"
+            [disabled]="todo.completed"
+            (click)="finishTodo(todo.id)"
+          > Завершить </button>
+        </div>
+      </div>
+    </div>
+    <ng-template #load>
+      <app-loader></app-loader>
+    </ng-template>
+  </section>
+</div>

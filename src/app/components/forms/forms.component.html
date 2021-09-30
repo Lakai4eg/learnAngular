@@ -9,7 +9,7 @@
         <small *ngIf="form.controls['email'].errors!.required"  class="validation_error">Поле является обязательным</small>
         <small *ngIf="form.controls['email'].errors!.email" class="validation_error">Введен неверный e-mail</small>
         <small *ngIf="form.controls['email'].errors!.restrictedemail && !form.controls['email'].errors!.email" class="validation_error">Запрещенный email {{form.controls['email'].value}}</small>
-<!--        <small *ngIf="form.get('email').errors.nonUniqueEmail" class="validation_error">E-mail {{form.get('email').value}} уже занят</small>-->
+        <small *ngIf="form.controls['email'].errors!.nonUniqueEmail" class="validation_error">E-mail {{form.controls['email'].value}} уже занят</small>
       </div>
     </div>
 
