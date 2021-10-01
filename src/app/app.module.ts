@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,9 +16,18 @@ import { ServicesComponent } from './components/services/services.component';
 import { InternalComponent } from './components/services/internal/internal.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { WorkWithServerComponent } from './components/work-with-server/work-with-server.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { LoaderComponent } from './components/loader/loader.component';
 import { RoutingComponent } from './components/routing/routing.component';
+import {AuthInterceptorService} from "./services/authInterceptor.service";
+import { RoutingItemFirstComponent } from './components/routing/routing-item/routing-item-first/routing-item-first.component';
+import { RoutingItemSecondComponent } from './components/routing/routing-item/routing-item-second/routing-item-second.component';
+
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptorService,
+  multi: true,
+}
 
 @NgModule({
   declarations: [
@@ -36,7 +45,9 @@ import { RoutingComponent } from './components/routing/routing.component';
     FormsComponent,
     WorkWithServerComponent,
     LoaderComponent,
-    RoutingComponent
+    RoutingComponent,
+    RoutingItemFirstComponent,
+    RoutingItemSecondComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +56,7 @@ import { RoutingComponent } from './components/routing/routing.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,6 +23,15 @@
         <a class="nav-link" routerLink="/routing/1">Routing</a>
       </li>
     </ul>
+    <div class="login">
+      <button (click)="authService.login()"
+              class="btn"
+              [class.btn-success]="authService.isAuth"
+              [class.btn-info]="!authService.isAuth"
+      >Login</button>
+      <button (click)="authService.logout()"
+              class="btn btn-info">Logout</button>
+    </div>
   </nav>
   <section class="section">
     <router-outlet></router-outlet>
