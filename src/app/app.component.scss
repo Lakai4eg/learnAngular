@@ -1,11 +1,21 @@
 .navigation{
-  background-color: #e3f2fd
+  background-color: #e3f2fd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.login{
+  display: flex;
+  gap: 10px;
 }
 
 .navbar{
   justify-content: flex-start;
   list-style: none;
-  padding: 0 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item{

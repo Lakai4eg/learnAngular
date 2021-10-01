@@ -49,5 +49,4 @@ export class RoutingComponent implements OnInit{
         this.wrongId = false
       })
   }
-
 }
